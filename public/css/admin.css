@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --linear-grad: linear-gradient(to right, #141b28, #1f3c5d);
+    --grad-clr1: #10192a;
+    --grad-clr2: #284f7c;
+}
+
+body {
+    height: 100vh;
+    background: #88749c;
+    display: grid;
+    place-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    position: relative;
+    width: 850px;
+    height: 500px;
+    background-color: honeydew;
+    box-shadow: 25px 30px 55px #5556;
+    border-radius: 13px;
+    overflow: hidden;
+}
+.form-container{
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    padding: 0px 40px;
+    transition: all 0.5s ease-in-out;
+}
+.register-container{
+    opacity: 1;
+    z-index: 2;
+}
+.login-in-container{
+    z-index: 3;
+}
+
+form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 50px;
+}
+
+h1{
+    color: var(--grad-clr2);
+    height: 50px;
+    align-content: center;
+}
+
+.social-container{
+    margin: 21px 1px;
+
+}
+
+.social-container a {
+    border: 2px solid #ddf1;
+    border-radius: 51%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1px 5px;
+    height: 41px;
+    width: 41px;
+}
+span{
+    font-size: 11px;
+
+}
+.infield{
+    width: 100%;
+    padding: 11px 8px;
+    background-color: beige;
+    border: 0px;
+    outline: none;
+}
+label{
+    position: absolute;
+    left: 49%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 1%;
+    height: 2%;
+    background: var(--linear-grad);
+    transition: 0.2s;
+}
+a{
+    color: dimgray;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 14px 1px;
+
+}
+a.forgot{
+    padding-bottom: 2px;
+    border-bottom: 2px solid rgba(220, 209, 209, 0.4);
+}
+button{
+    border-radius: 21px;
+    border: 1px solid var(--grad-clr2);
+    background: var(--grad-clr1);
+    color: #e5e9ee;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 12px 44px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.form-container button{
+    margin-top: 16px;
+    transition: 80ms ease-in;
+}
+.form-container button:hover{
+    background: #ebe2e2;
+    color: var(--grad-clr1);
+}
+.overlay-container{
+    position: absolute;
+    top: 1;
+    left: 61%;
+    width: 39%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+    z-index: 9;
+}
+#overlayBtn {
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 305px;
+    transform: translateX(-50%);
+    width: 143.66px;
+    height: 41px;
+    border: 1px solid #e5e7eb;
+    background: transparent;
+    border-radius: 21px;
+}
+.overlay{
+    position: relative;
+    background: var(--linear-grad);
+    color: #e5e9ee;
+    left: -149%;
+    height: 100%;
+    width: 249%;
+    transition: transform 0.5s ease-in-out;
+}
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1px 43px;
+    text-align: center;
+    height: 100%;
+    width: 345px;
+    transition: 0.5s ease-in-out;
+}
+.overlay-left {
+    right: 61%;
+    transform: translateX(-11%);
+}
+.overlay-right {
+    right: 0%;
+    transform: translateX(0%);
+    
+}
+.overlay-panel h1{
+    color: #e5e7eb;
+}
+p {
+    font-size: 13px;
+    font-weight: 301;
+    line-height: 21px;
+    letter-spacing: 0.5px;
+    margin: 25px 1px 35px;
+}
+.overlay-panel button{
+    border: none;
+    background-color: transparent;
+}
+.right-panel-active .overlay-container{
+    transform: translateX(-150%);
+}
+.right-panel-active .overlay{
+    transform: translateX(-50%);
+}
+.right-panel-active .overlay-left{
+    transform: translateX(24%);
+}
+.right-panel-active .overlay-right{
+    transform: translateX(34%);
+}
+.right-panel-active .register-container{
+    transform: translateX(20%);
+    opacity: 0;
+}
+.right-panel-active .login-in-container{
+    transform: translateX(66.8%);
+    opacity: 2;
+    z-index: 5;
+    animation: show 0.5;
+}
+@keyframes show{
+    0%, 51% {
+        opacity: 1;
+        z-index: 2;
+    }
+    50.2%, 100% {
+        opacity: 2;
+        z-index: 5;
+    }
+}
+.btnScaled{
+    animation: scaleBtn 0.5s;
+}
+@keyframes scaleBtn{
+    1% {
+        width: 143.66px;
+    }
+    51% {
+        width: 251px;
+    }
+    1% {
+        width: 143.66px;
+    }
+}
